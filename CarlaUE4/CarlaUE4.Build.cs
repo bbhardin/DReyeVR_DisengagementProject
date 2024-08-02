@@ -80,5 +80,8 @@ public class CarlaUE4 : ModuleRules
         }
 
         PrivateDependencyModuleNames.AddRange(new string[] { "ImageWriteQueue" });
+
+        // Add web browser plug in to Unreal
+        PublicDependencyModuleNames.AddRange(new string[] { "WebBrowserWidget" });
     }
 }
