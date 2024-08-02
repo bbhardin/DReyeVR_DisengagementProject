@@ -236,6 +236,8 @@ class CARLAUE4_API AEgoVehicle : public ACarlaWheeledVehicle
     float TurnSignalDuration; // time in seconds
     UPROPERTY(Category = "Dash", EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
     class UTextRenderComponent *GearShifter;
+    UPROPERTY(Category = "Dash", EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
+    class UTextRenderComponent *MapView;
     void UpdateDash();
     float SpeedometerScale = CmPerSecondToXPerHour(true); // scale from CM/s to MPH or KPH (default MPH)
 

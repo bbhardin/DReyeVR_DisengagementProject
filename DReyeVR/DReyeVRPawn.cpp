@@ -315,7 +315,13 @@ void ADReyeVRPawn::DrawFlatHUD(float DeltaSeconds)
         const float Diameter = ReticleSize;
         const float Thickness = (ReticleSize / 2.f) / 10.f; // 10 % of radius
         // FlatHUD->DrawDynamicSquare(GazeEnd, Diameter, FColor(255, 0, 0, 255), Thickness);
-        FlatHUD->DrawDynamicCrosshair(HitPoint, Diameter, FColor(255, 0, 0, 255), true, Thickness);
+        
+    
+        // Disable draw the crosshair of the eye gaze    
+        //FlatHUD->DrawDynamicCrosshair(HitPoint, Diameter, FColor(255, 0, 0, 255), true, Thickness);
+
+
+        // Enable the web view
     }
 
     if (bDrawFPSCounter)
