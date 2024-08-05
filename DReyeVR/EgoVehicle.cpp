@@ -780,16 +780,16 @@ void AEgoVehicle::ConstructDashText() // dashboard text (speedometer, turn signa
     // This is built on a web layer
     // TODO: May want to turn this into an actual paramter that I can check to enable the interface
     if (true) {
-        MapView = CreateEgoObject<UTextRenderComponent>("MapView");
-        MapView->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
-        MapView->SetRelativeTransform(VehicleParams.Get<FTransform>("Dashboard", "GearShifterTransform"));
-        MapView->SetTextRenderColor(FColor::Red);
-        MapView->SetText(FText::FromString("BEN"));
-        MapView->SetXScale(3.f);
-        MapView->SetYScale(2.f);
-        MapView->SetWorldSize(10); // scale the font with this
-        MapView->SetVerticalAlignment(EVerticalTextAligment::EVRTA_TextCenter);
-        MapView->SetHorizontalAlignment(EHorizTextAligment::EHTA_Center);
+        MapView = UObject::CreateDefaultSubobject<UWebBrowser>(FName("MapView"));//CreateEgoObject<UWebBrowser>("MapView");
+        // MapView->AttachToComponent(GetRootComponent(), FAttachmentTransformRules::KeepRelativeTransform);
+        // MapView->SetRelativeTransform(VehicleParams.Get<FTransform>("Dashboard", "GearShifterTransform"));
+        // // MapView->SetTextRenderColor(FColor::Red);
+        // // MapView->SetText(FText::FromString("BEN"));
+        // MapView->SetXScale(3.f);
+        // MapView->SetYScale(2.f);
+        // MapView->SetWorldSize(10); // scale the font with this
+        // MapView->SetVerticalAlignment(EVerticalTextAligment::EVRTA_TextCenter);
+        // MapView->SetHorizontalAlignment(EHorizTextAligment::EHTA_Center);
         check(MapView != nullptr);
     }
 }
@@ -859,7 +859,7 @@ void AEgoVehicle::UpdateDash()
     if (MapView != nullptr)
     {
         // Draw the map view
-        MapView->SetText(bReverse ? FText::FromString("BEN") : FText::FromString("BEN"));
+        // MapView->SetText(bReverse ? FText::FromString("BEN") : FText::FromString("BEN"));
     }
 }
 

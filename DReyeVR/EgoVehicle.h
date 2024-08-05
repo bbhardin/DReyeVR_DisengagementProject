@@ -16,9 +16,11 @@
 #include "EgoSensor.h"                                // AEgoSensor
 #include "FlatHUD.h"                                  // ADReyeVRHUD
 #include "ImageUtils.h"                               // CreateTexture2D
-#include "WheeledVehicle.h"                           // VehicleMovementComponent
+#include "WheeledVehicle.h"                           // VehicleMovementComponen
 #include <stdio.h>
 #include <vector>
+
+#include "WebBrowser.h"
 
 #include "EgoVehicle.generated.h"
 
@@ -237,7 +239,7 @@ class CARLAUE4_API AEgoVehicle : public ACarlaWheeledVehicle
     UPROPERTY(Category = "Dash", EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
     class UTextRenderComponent *GearShifter;
     UPROPERTY(Category = "Dash", EditDefaultsOnly, BlueprintReadWrite, meta = (AllowPrivateAccess = "true"))
-    class UTextRenderComponent *MapView;
+    class UWebBrowser *MapView;
     void UpdateDash();
     float SpeedometerScale = CmPerSecondToXPerHour(true); // scale from CM/s to MPH or KPH (default MPH)
 
